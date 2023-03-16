@@ -21,6 +21,7 @@ RUN apt-get update  \
     tar \
     gzip \
     ca-certificates \
+    azure-cli \
     curl \
     unzip \
     jq \

@@ -1,6 +1,6 @@
 # terraform-output action
 
-This is one of a suite of terraform related actions - find them at [dflook/terraform-github-actions](https://github.com/dflook/terraform-github-actions).
+This is one of a suite of terraform related actions - find them at [azurenoops/terraform-github-actions](https://github.com/azurenoops/terraform-github-actions).
 
 Retrieve the root-level outputs from a terraform configuration.
 
@@ -130,9 +130,9 @@ Retrieve the root-level outputs from a terraform configuration.
       # Install postgres client
       apt-get install -y --no-install-recommends postgresql-client
     TERRAFORM_HTTP_CREDENTIALS: |
-      example.com=dflook:${{ secrets.HTTPS_PASSWORD }}
-      github.com/dflook/terraform-github-actions.git=dflook-actions:${{ secrets.ACTIONS_PAT }}
-      github.com/dflook=dflook:${{ secrets.DFLOOK_PAT }}
+      example.com=azurenoops:${{ secrets.HTTPS_PASSWORD }}
+      github.com/azurenoops/terraform-github-actions.git=azurenoops-actions:${{ secrets.ACTIONS_PAT }}
+      github.com/azurenoops=azurenoops:${{ secrets.azurenoops_PAT }}
       github.com=graham:${{ secrets.GITHUB_PAT }}  
   ```
 
@@ -180,7 +180,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Get outputs
-        uses: dflook/terraform-output@v1
+        uses: azurenoops/terraform-output@v1
         id: tf-outputs
         with:
           path: my-terraform-config
@@ -214,7 +214,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Get outputs
-        uses: dflook/terraform-output@v1
+        uses: azurenoops/terraform-output@v1
         id: tf-outputs
         with:
           path: my-terraform-config

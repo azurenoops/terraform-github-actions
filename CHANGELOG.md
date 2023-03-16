@@ -23,11 +23,11 @@ When using an action you can specify the version as:
 ## [1.33.0] - 2023-02-28
 
 ### Added
-- The [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) and [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply) actions now have a `destroy` input.
+- The [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) and [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply) actions now have a `destroy` input.
   When set to `true` terraform will run in destroy mode, planning the destruction of all resources.
   This allows reviewing the effect of a destroy before applying it.
 
-  The [dflook/terraform-destroy](https://github.com/dflook/terraform-github-actions/tree/main/terraform-destroy) action is unchanged and will still immediately destroy all resources.
+  The [azurenoops/terraform-destroy](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-destroy) action is unchanged and will still immediately destroy all resources.
 
 ## [1.32.1] - 2023-02-02
 
@@ -37,10 +37,10 @@ When using an action you can specify the version as:
 ## [1.32.0] - 2023-01-28
 
 ### Added
-- A new [dflook/terraform-state-unlock](https://github.com/dflook/terraform-github-actions/tree/main/terraform-state-unlock) action. Thanks [patricktalmeida](https://github.com/patricktalmeida) for working on this!
+- A new [azurenoops/terraform-state-unlock](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-state-unlock) action. Thanks [patricktalmeida](https://github.com/patricktalmeida) for working on this!
 - Actions that fail because the state was locked will now have the `failure-reason` output set to `state-locked`.
   They also have a new `lock-info` output which is a json object with any available lock information.
-  This affects [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply), [dflook/terraform-destroy](https://github.com/dflook/terraform-github-actions/tree/main/terraform-destroy), and [dflook/terraform-destroy-worksapce](https://github.com/dflook/terraform-github-actions/tree/main/terraform-destroy-workspace).
+  This affects [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply), [azurenoops/terraform-destroy](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-destroy), and [azurenoops/terraform-destroy-worksapce](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-destroy-workspace).
 
 ### Changed
 - If a terraform operation fails because the state is locked the `failure-reason` output will now be set to `state-locked`,
@@ -55,7 +55,7 @@ When using an action you can specify the version as:
 ## [1.31.0] - 2022-11-22
 
 ### Added
-- Values in the `variables` input of [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) will be masked in the PR comment if the Terraform variable is marked 'sensitive'. Previously a `label` was required to avoid revealing sensitive values.
+- Values in the `variables` input of [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) will be masked in the PR comment if the Terraform variable is marked 'sensitive'. Previously a `label` was required to avoid revealing sensitive values.
 
 ## [1.30.0] - 2022-11-19
 
@@ -91,10 +91,10 @@ When using an action you can specify the version as:
 ## [1.27.0] - 2022-08-07
 
 ### Added
-- [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) and [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply) now work with plans that are too large to fit in a PR comment.
+- [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) and [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply) now work with plans that are too large to fit in a PR comment.
 
   If plan is too large it will be truncated in the comment, with the full plan viewable in the workflow log.
-  When [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply) aborts the apply because the plan is outdated, a partial diff will be shown in the workflow log with a link to the full plan for direct comparison.
+  When [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply) aborts the apply because the plan is outdated, a partial diff will be shown in the workflow log with a link to the full plan for direct comparison.
 
 ### Fixed
 - Warnings are ignored when deciding if a plan has changed and should no longer cause aborted applies if the order of the warnings changes.
@@ -116,13 +116,13 @@ When using an action you can specify the version as:
 ## [1.25.0] - 2022-05-06
 
 ### Added
-- New `run_id` output for [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) and [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply) which are set when using Terraform Cloud/Enterprise. It is the remote run-id of the plan or apply operation.
-- The `json_plan_path` output of [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) now works when using Terraform Cloud/Enterprise.
+- New `run_id` output for [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) and [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply) which are set when using Terraform Cloud/Enterprise. It is the remote run-id of the plan or apply operation.
+- The `json_plan_path` output of [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) now works when using Terraform Cloud/Enterprise.
 
 ## [1.24.0] - 2022-05-03
 
 ### Added
-- New `to_add`, `to_change` and `to_destroy` outputs for the [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) action that contain the number of resources that would be added, changed or deleted by the plan.
+- New `to_add`, `to_change` and `to_destroy` outputs for the [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) action that contain the number of resources that would be added, changed or deleted by the plan.
 
   These can be used in an [if expression](https://docs.github.com/en/enterprise-server@3.2/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idif) in a workflow to conditionally run steps, e.g. when the plan would destroy something. 
 
@@ -131,20 +131,20 @@ When using an action you can specify the version as:
 ### Changed
 - Input variables no longer help identify the plan comment. Each PR comment is still identified by it's configured terraform backend state file. This is a very subtle change but enables better reporting of why an apply operation is aborted, e.g. "plan has changed" vs "plan not found".
 
-  This means that if you have more than one [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) action for the same `path` and backend but with different variables, you should ensure they use different `label`s.
+  This means that if you have more than one [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) action for the same `path` and backend but with different variables, you should ensure they use different `label`s.
 
 - The workflow output when an apply has been aborted because of changes in the plan has been clarified - thanks [toast-gear](https://github.com/toast-gear)!
 
 ### Fixed
 - Pre-release terraform versions now won't be used when selecting the latest terraform version.
 - Invalid terraform files that contained an unterminated string would take an extremely long time to parse before failing the job.
-- [dflook/terraform-validate](https://github.com/dflook/terraform-github-actions/tree/main/terraform-validate) now automatically sets `terraform.workspace` to `default` when validating a module that uses a `remote` or `cloud` backend. 
+- [azurenoops/terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-validate) now automatically sets `terraform.workspace` to `default` when validating a module that uses a `remote` or `cloud` backend. 
 
 ## [1.22.2] - 2022-02-28
 
 ### Fixed
 - The PR plan comment was incorrectly including resource refresh lines when there were changes to outputs but not resources, while using Terraform >=0.15.4. As well as being noisy, this could lead to failures to apply due to incorrectly detecting changes in the plan.
-- Removed incorrect deprecation warning in [dflook/terraform-destroy](https://github.com/dflook/terraform-github-actions/tree/main/terraform-destroy). Thanks [dgrenner](https://github.com/dgrenner)!
+- Removed incorrect deprecation warning in [azurenoops/terraform-destroy](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-destroy). Thanks [dgrenner](https://github.com/dgrenner)!
 
 ## [1.22.1] - 2022-01-24
 
@@ -155,9 +155,9 @@ When using an action you can specify the version as:
 
 ### Added
 - Workspace management for Terraform Cloud/Enterprise has been reimplemented to avoid issues with the `terraform workspace` command when using the `remote` backend or a cloud config block:
-  - [dflook/terraform-new-workspace](https://github.com/dflook/terraform-github-actions/tree/main/terraform-new-workspace) can now create the first workspace
-  - [dflook/terraform-destroy-workspace](https://github.com/dflook/terraform-github-actions/tree/main/terraform-destroy-workspace) can now delete the last remaining workspace
-  - [dflook/terraform-new-workspace](https://github.com/dflook/terraform-github-actions/tree/main/terraform-new-workspace) and [dflook/terraform-destroy-workspace](https://github.com/dflook/terraform-github-actions/tree/main/terraform-destroy-workspace) work with a `remote` backend that specifies a workspace by `name`
+  - [azurenoops/terraform-new-workspace](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-new-workspace) can now create the first workspace
+  - [azurenoops/terraform-destroy-workspace](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-destroy-workspace) can now delete the last remaining workspace
+  - [azurenoops/terraform-new-workspace](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-new-workspace) and [azurenoops/terraform-destroy-workspace](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-destroy-workspace) work with a `remote` backend that specifies a workspace by `name`
   
 - The terraform version to use will now be detected from additional places:
 
@@ -168,35 +168,35 @@ When using an action you can specify the version as:
 
   The best way to specify the version is using a [`required_version`](https://www.terraform.io/docs/configuration/terraform.html#specifying-a-required-terraform-version) constraint.
 
-  See [dflook/terraform-version](https://github.com/dflook/terraform-github-actions/tree/main/terraform-version#terraform-version-action) docs for details.
+  See [azurenoops/terraform-version](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-version#terraform-version-action) docs for details.
 
 ### Changed
 As a result of the above terraform version detection additions, note these changes:
 
-- Actions always use the terraform version set in the remote workspace when using TFC/E, if it exists. This mostly effects [dflook/terraform-fmt](https://github.com/dflook/terraform-github-actions/tree/main/terraform-fmt), [dflook/terraform-fmt-check](https://github.com/dflook/terraform-github-actions/tree/main/terraform-fmt-check) and [dflook/terraform-validate](https://github.com/dflook/terraform-github-actions/tree/main/terraform-validate).
+- Actions always use the terraform version set in the remote workspace when using TFC/E, if it exists. This mostly effects [azurenoops/terraform-fmt](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-fmt), [azurenoops/terraform-fmt-check](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-fmt-check) and [azurenoops/terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-validate).
 
 - If the terraform version is not specified anywhere then new workspaces will be created with the latest terraform version. Existing workspaces will use the terraform version that was last used for that workspace.
 
 - If you want to always use the latest terraform version, instead of not specifying a version you now need to set an open-ended version constraint (e.g. `>1.0.0`)
 
-- All actions now support the inputs and environment variables related to the backend, for discovering the terraform version from a TFC/E workspace or remote state. This add the inputs `workspace`, `backend_config`, `backend_config_file`, and the `TERRAFORM_CLOUD_TOKENS` environment variable to the [dflook/terraform-fmt](https://github.com/dflook/terraform-github-actions/tree/main/terraform-fmt), [dflook/terraform-fmt-check](https://github.com/dflook/terraform-github-actions/tree/main/terraform-fmt-check) and [dflook/terraform-validate](https://github.com/dflook/terraform-github-actions/tree/main/terraform-validate) actions.
+- All actions now support the inputs and environment variables related to the backend, for discovering the terraform version from a TFC/E workspace or remote state. This add the inputs `workspace`, `backend_config`, `backend_config_file`, and the `TERRAFORM_CLOUD_TOKENS` environment variable to the [azurenoops/terraform-fmt](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-fmt), [azurenoops/terraform-fmt-check](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-fmt-check) and [azurenoops/terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-validate) actions.
 
 - :warning: Some unused packages were removed from the container image, most notably Python 2.
 
 ## [1.21.1] - 2021-12-12
 
 ### Fixed
-- [dflook/terraform-new-workspace](https://github.com/dflook/terraform-github-actions/tree/main/terraform-new-workspace) support for Terraform v1.1.0.
+- [azurenoops/terraform-new-workspace](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-new-workspace) support for Terraform v1.1.0.
 
   This stopped working after a change in the behaviour of terraform init.
  
   There is an outstanding [issue in Terraform v1.1.0](https://github.com/hashicorp/terraform/issues/30129) using the `remote` backend that prevents creating a new workspace when no workspaces currently exist.
-  If you are affected by this, you can pin to an earlier version of Terraform using one of methods listed in the [dflook/terraform-version](https://github.com/dflook/terraform-github-actions/tree/main/terraform-version#terraform-version-action) docs.
+  If you are affected by this, you can pin to an earlier version of Terraform using one of methods listed in the [azurenoops/terraform-version](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-version#terraform-version-action) docs.
 
 ## [1.21.0] - 2021-12-04
 
 ### Added
-- A new `workspace` input for [dflook/terraform-validate](https://github.com/dflook/terraform-github-actions/tree/main/terraform-validate) 
+- A new `workspace` input for [azurenoops/terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-validate) 
   allows validating usage of `terraform.workspace` in the terraform code.
 
   Terraform doesn't initialize `terraform.workspace` based on the backend configuration when running a validate operation.
@@ -210,12 +210,12 @@ As a result of the above terraform version detection additions, note these chang
 ## [1.20.0] - 2021-12-03
 
 ### Added
-- New `text_plan_path` and `json_plan_path` outputs for [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply)
-  to match the outputs for [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan).
+- New `text_plan_path` and `json_plan_path` outputs for [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply)
+  to match the outputs for [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan).
 
   These are paths to the generated plan in human-readable and JSON formats.
 
-  If the plan generated by [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan) is different from the plan generated by [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply) the apply step will fail with `failure-reason` set to `plan-changed`.
+  If the plan generated by [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan) is different from the plan generated by [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply) the apply step will fail with `failure-reason` set to `plan-changed`.
   These new outputs make it easier to inspect the differences.
 
 ## [1.19.0] - 2021-11-01
@@ -228,7 +228,7 @@ As a result of the above terraform version detection additions, note these chang
 ## [1.18.0] - 2021-10-30
 
 ### Added
-- A new `replace` input for [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan#inputs) and [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply#inputs)
+- A new `replace` input for [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan#inputs) and [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply#inputs)
 
   This instructs terraform to replace the specified resources, and is available with terraform versions that support replace (v0.15.2 onwards).
 
@@ -238,7 +238,7 @@ As a result of the above terraform version detection additions, note these chang
       random_password.database
   ```
 
-- A `target` input for [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/main/terraform-plan#inputs) to match [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/main/terraform-apply#inputs)
+- A `target` input for [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-plan#inputs) to match [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-apply#inputs)
 
   `target` limits the plan to the specified resources and their dependencies. This change removes the restriction that `target` can only be used with `auto_approve`.
 
@@ -273,7 +273,7 @@ As a result of the above terraform version detection additions, note these chang
 ## [1.16.0] - 2021-10-04
 
 ### Added
-- [dflook/terraform-plan](https://github.com/dflook/terraform-github-actions/tree/master/terraform-plan) has gained two new outputs:
+- [azurenoops/terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-plan) has gained two new outputs:
   - `json_plan_path` is a path to the generated plan in a JSON format file
   - `text_plan_path` is a path to the generated plan in a human-readable text file
 
@@ -285,15 +285,15 @@ As a result of the above terraform version detection additions, note these chang
 - Actions that intentionally cause a build failure now set a `failure-reason` output to enable safely responding to those failures.
 
   Possible failure reasons are:
-  - [dflook/terraform-validate](https://github.com/dflook/terraform-github-actions/tree/master/terraform-validate#outputs): validate-failed
-  - [dflook/terraform-fmt-check](https://github.com/dflook/terraform-github-actions/tree/master/terraform-fmt-check#outputs): check-failed
-  - [dflook/terraform-check](https://github.com/dflook/terraform-github-actions/tree/master/terraform-check#outputs): changes-to-apply
-  - [dflook/terraform-apply](https://github.com/dflook/terraform-github-actions/tree/master/terraform-apply#outputs): apply-failed, plan-changed
-  - [dflook/terraform-destroy](https://github.com/dflook/terraform-github-actions/tree/master/terraform-destroy#outputs): destroy-failed
-  - [dflook/terraform-destroy-workspace](https://github.com/dflook/terraform-github-actions/tree/master/terraform-destroy-workspace#outputs): destroy-failed
+  - [azurenoops/terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-validate#outputs): validate-failed
+  - [azurenoops/terraform-fmt-check](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-fmt-check#outputs): check-failed
+  - [azurenoops/terraform-check](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-check#outputs): changes-to-apply
+  - [azurenoops/terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-apply#outputs): apply-failed, plan-changed
+  - [azurenoops/terraform-destroy](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-destroy#outputs): destroy-failed
+  - [azurenoops/terraform-destroy-workspace](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-destroy-workspace#outputs): destroy-failed
 
 ### Fixed
-- [dflook/terraform-validate](https://github.com/dflook/terraform-github-actions/tree/master/terraform-validate) was sometimes unable to create detailed check failures.
+- [azurenoops/terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-validate) was sometimes unable to create detailed check failures.
 
 ## [1.14.0] - 2021-09-15
 
@@ -335,16 +335,16 @@ As a result of the above terraform version detection additions, note these chang
 ## [1.12.0] - 2021-06-08
 
 ### Changed
-- [terraform-fmt-check](https://github.com/dflook/terraform-github-actions/tree/master/terraform-fmt-check) now shows a diff in the workflow log when it finds files in non-canonical format
+- [terraform-fmt-check](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-fmt-check) now shows a diff in the workflow log when it finds files in non-canonical format
 
 ## [1.11.0] - 2021-06-05
 
 ### Added
-- The `add_github_comment` input for [terraform-plan](https://github.com/dflook/terraform-github-actions/tree/master/terraform-plan) may now be set to `changes-only`. This will only add a PR comment
+- The `add_github_comment` input for [terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-plan) may now be set to `changes-only`. This will only add a PR comment
   for plans that result in changes to apply - no comment will be added for plans with no changes.
 
 ### Changed
-- Improved messaging in the workflow log when [terraform-apply](https://github.com/dflook/terraform-github-actions/tree/master/terraform-apply) is aborted because the plan has changed
+- Improved messaging in the workflow log when [terraform-apply](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-apply) is aborted because the plan has changed
 - Update documentation for `backend_config`, `backend_config_file`, `var_file` & `target` inputs to use separate lines for multiple values. 
   Multiple values may still be separated by commas if preferred.
 
@@ -354,7 +354,7 @@ As a result of the above terraform version detection additions, note these chang
 - `TERRAFORM_HTTP_CREDENTIALS` environment variable for configuring the username and password to use for
   `git::https://` & `https://` module sources.
 
-  See action documentation for details, e.g. [terraform-plan](https://github.com/dflook/terraform-github-actions/tree/master/terraform-plan#environment-variables)
+  See action documentation for details, e.g. [terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-plan#environment-variables)
 
 ## [1.9.3] - 2021-05-29
 
@@ -378,7 +378,7 @@ As a result of the above terraform version detection additions, note these chang
 
   This value should be valid terraform syntax - like a [variable definition file](https://www.terraform.io/docs/language/values/variables.html#variable-definitions-tfvars-files).
   Variable values set in `variables` override any given in var_files.
-  See action documentation for details, e.g. [terraform-plan](https://github.com/dflook/terraform-github-actions/tree/master/terraform-plan#inputs).
+  See action documentation for details, e.g. [terraform-plan](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-plan#inputs).
 
 ### Deprecated
 - The `var` input has been deprecated due to the following limitations:
@@ -397,7 +397,7 @@ As a result of the above terraform version detection additions, note these chang
 - `TERRAFORM_SSH_KEY` environment variable to configure an SSH private key to use for
   [Git Repository](https://www.terraform.io/docs/language/modules/sources.html#generic-git-repository) module sources.
 
-See individual actions for details, e.g. [terraform-validate](https://github.com/dflook/terraform-github-actions/tree/master/terraform-validate#environment-variables).
+See individual actions for details, e.g. [terraform-validate](https://github.com/azurenoops/terraform-github-actions/tree/master/terraform-validate#environment-variables).
 
 ## [1.7.0] - 2021-04-02
 
@@ -414,7 +414,7 @@ See individual actions for details, e.g. [terraform-validate](https://github.com
 - PR comments use a one line summary of the terraform output, with the full output in a collapsable pane.
 
   If a plan is short the output is shown by default. This can be controlled with the `TF_PLAN_COLLAPSE_LENGTH` environment
-  variable for the [dflook/terraform-plan](terraform-plan) action.
+  variable for the [azurenoops/terraform-plan](terraform-plan) action.
 
 ### Fixed
 - Now makes far fewer github api requests to avoid rate limiting.
@@ -450,7 +450,7 @@ See individual actions for details, e.g. [terraform-validate](https://github.com
 
 ### Added
 - Better support for the `issue_comment` and `pull_request_review_comment`
-  events in the [dflook/terraform-plan](terraform-plan) and [dflook/terraform-apply](terraform-apply) actions
+  events in the [azurenoops/terraform-plan](terraform-plan) and [azurenoops/terraform-apply](terraform-apply) actions
 
   This allows using plan PR comments when triggered in reponse to those
   events, enabling workflows like [applying a plan using a comment](terraform-apply#applying-a-plan-using-a-comment).
@@ -472,88 +472,88 @@ See individual actions for details, e.g. [terraform-validate](https://github.com
 ## [1.2.0] - 2020-07-18
 
 ### Added
-- Complex terraform types are now available as action outputs, which results in a json string approximating the type. See [dflook/terraform-output](terraform-output) for details.
-  This also affects the outputs of [dflook/terraform-apply](terraform-apply) and [dflook/terraform-remote-state](terraform-remote-state).
+- Complex terraform types are now available as action outputs, which results in a json string approximating the type. See [azurenoops/terraform-output](terraform-output) for details.
+  This also affects the outputs of [azurenoops/terraform-apply](terraform-apply) and [azurenoops/terraform-remote-state](terraform-remote-state).
 
 ### Fixed
 - File path in failing checks is now correct with respect to the repository, and can be clicked through to see the annotation in context.
-  This affects the [dflook/terraform-fmt-check](terraform-fmt-check) and [dflook/terraform-validate](terraform-validate) actions.
+  This affects the [azurenoops/terraform-fmt-check](terraform-fmt-check) and [azurenoops/terraform-validate](terraform-validate) actions.
 
 ## [1.1.0] - 2020-07-07
 
 ### Added
 - The root-level outputs of a terraform configuration are now exposed directly
-  by the [dflook/terraform-apply](terraform-apply) action, as if the
-  [dflook/terraform-output](terraform-output) action has been run immediately after.
+  by the [azurenoops/terraform-apply](terraform-apply) action, as if the
+  [azurenoops/terraform-output](terraform-output) action has been run immediately after.
 
 ## [1.0.0] - 2020-07-06
 
 First release of the GitHub Actions:
-- [dflook/terraform-version](terraform-version)
-- [dflook/terraform-remote-state](terraform-remote-state)
-- [dflook/terraform-output](terraform-output)
-- [dflook/terraform-validate](terraform-validate)
-- [dflook/terraform-fmt-check](terraform-fmt-check)
-- [dflook/terraform-fmt](terraform-fmt)
-- [dflook/terraform-check](terraform-check)
-- [dflook/terraform-plan](terraform-plan)
-- [dflook/terraform-apply](terraform-apply)
-- [dflook/terraform-destroy](terraform-destroy)
-- [dflook/terraform-new-workspace](terraform-new-workspace)
-- [dflook/terraform-destroy-workspace](terraform-destroy-workspace)
+- [azurenoops/terraform-version](terraform-version)
+- [azurenoops/terraform-remote-state](terraform-remote-state)
+- [azurenoops/terraform-output](terraform-output)
+- [azurenoops/terraform-validate](terraform-validate)
+- [azurenoops/terraform-fmt-check](terraform-fmt-check)
+- [azurenoops/terraform-fmt](terraform-fmt)
+- [azurenoops/terraform-check](terraform-check)
+- [azurenoops/terraform-plan](terraform-plan)
+- [azurenoops/terraform-apply](terraform-apply)
+- [azurenoops/terraform-destroy](terraform-destroy)
+- [azurenoops/terraform-new-workspace](terraform-new-workspace)
+- [azurenoops/terraform-destroy-workspace](terraform-destroy-workspace)
 
-[1.34.0]: https://github.com/dflook/terraform-github-actions/compare/v1.33.0...v1.34.0
-[1.33.0]: https://github.com/dflook/terraform-github-actions/compare/v1.32.1...v1.33.0
-[1.32.1]: https://github.com/dflook/terraform-github-actions/compare/v1.32.0...v1.32.1
-[1.32.0]: https://github.com/dflook/terraform-github-actions/compare/v1.31.1...v1.32.0
-[1.31.1]: https://github.com/dflook/terraform-github-actions/compare/v1.31.0...v1.31.1
-[1.31.0]: https://github.com/dflook/terraform-github-actions/compare/v1.30.0...v1.31.0
-[1.30.0]: https://github.com/dflook/terraform-github-actions/compare/v1.29.1...v1.30.0
-[1.29.1]: https://github.com/dflook/terraform-github-actions/compare/v1.29.0...v1.29.1
-[1.29.0]: https://github.com/dflook/terraform-github-actions/compare/v1.28.1...v1.29.0
-[1.28.1]: https://github.com/dflook/terraform-github-actions/compare/v1.28.0...v1.28.1
-[1.28.0]: https://github.com/dflook/terraform-github-actions/compare/v1.27.0...v1.28.0
-[1.27.0]: https://github.com/dflook/terraform-github-actions/compare/v1.26.0...v1.27.0
-[1.26.0]: https://github.com/dflook/terraform-github-actions/compare/v1.25.1...v1.26.0
-[1.25.1]: https://github.com/dflook/terraform-github-actions/compare/v1.25.0...v1.25.1
-[1.25.0]: https://github.com/dflook/terraform-github-actions/compare/v1.24.0...v1.25.0
-[1.24.0]: https://github.com/dflook/terraform-github-actions/compare/v1.23.0...v1.24.0
-[1.23.0]: https://github.com/dflook/terraform-github-actions/compare/v1.22.2...v1.23.0
-[1.22.2]: https://github.com/dflook/terraform-github-actions/compare/v1.22.1...v1.22.2
-[1.22.1]: https://github.com/dflook/terraform-github-actions/compare/v1.22.0...v1.22.1
-[1.22.0]: https://github.com/dflook/terraform-github-actions/compare/v1.21.1...v1.22.0
-[1.21.1]: https://github.com/dflook/terraform-github-actions/compare/v1.21.0...v1.21.1
-[1.21.0]: https://github.com/dflook/terraform-github-actions/compare/v1.20.1...v1.21.0
-[1.20.1]: https://github.com/dflook/terraform-github-actions/compare/v1.20.0...v1.20.1
-[1.20.0]: https://github.com/dflook/terraform-github-actions/compare/v1.19.0...v1.20.0
-[1.19.0]: https://github.com/dflook/terraform-github-actions/compare/v1.18.0...v1.19.0
-[1.18.0]: https://github.com/dflook/terraform-github-actions/compare/v1.17.3...v1.18.0
-[1.17.3]: https://github.com/dflook/terraform-github-actions/compare/v1.17.2...v1.17.3
-[1.17.2]: https://github.com/dflook/terraform-github-actions/compare/v1.17.1...v1.17.2
-[1.17.1]: https://github.com/dflook/terraform-github-actions/compare/v1.17.0...v1.17.1
-[1.17.0]: https://github.com/dflook/terraform-github-actions/compare/v1.16.0...v1.17.0
-[1.16.0]: https://github.com/dflook/terraform-github-actions/compare/v1.15.0...v1.16.0
-[1.15.0]: https://github.com/dflook/terraform-github-actions/compare/v1.14.0...v1.15.0
-[1.14.0]: https://github.com/dflook/terraform-github-actions/compare/v1.13.0...v1.14.0
-[1.13.0]: https://github.com/dflook/terraform-github-actions/compare/v1.12.0...v1.13.0
-[1.12.0]: https://github.com/dflook/terraform-github-actions/compare/v1.11.0...v1.12.0
-[1.11.0]: https://github.com/dflook/terraform-github-actions/compare/v1.10.0...v1.11.0
-[1.10.0]: https://github.com/dflook/terraform-github-actions/compare/v1.9.3...v1.10.0
-[1.9.3]: https://github.com/dflook/terraform-github-actions/compare/v1.9.2...v1.9.3
-[1.9.2]: https://github.com/dflook/terraform-github-actions/compare/v1.9.1...v1.9.2
-[1.9.1]: https://github.com/dflook/terraform-github-actions/compare/v1.9.0...v1.9.1
-[1.9.0]: https://github.com/dflook/terraform-github-actions/compare/v1.8.0...v1.9.0
-[1.8.0]: https://github.com/dflook/terraform-github-actions/compare/v1.7.0...v1.8.0
-[1.7.0]: https://github.com/dflook/terraform-github-actions/compare/v1.6.0...v1.7.0
-[1.6.0]: https://github.com/dflook/terraform-github-actions/compare/v1.5.2...v1.6.0
-[1.5.2]: https://github.com/dflook/terraform-github-actions/compare/v1.5.1...v1.5.2
-[1.5.1]: https://github.com/dflook/terraform-github-actions/compare/v1.5.0...v1.5.1
-[1.5.0]: https://github.com/dflook/terraform-github-actions/compare/v1.4.2...v1.5.0
-[1.4.2]: https://github.com/dflook/terraform-github-actions/compare/v1.4.1...v1.4.2
-[1.4.1]: https://github.com/dflook/terraform-github-actions/compare/v1.4.0...v1.4.1
-[1.4.0]: https://github.com/dflook/terraform-github-actions/compare/v1.3.1...v1.4.0
-[1.3.1]: https://github.com/dflook/terraform-github-actions/compare/v1.3.0...v1.3.1
-[1.3.0]: https://github.com/dflook/terraform-github-actions/compare/v1.2.0...v1.3.0
-[1.2.0]: https://github.com/dflook/terraform-github-actions/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/dflook/terraform-github-actions/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/dflook/terraform-github-actions/releases/tag/v1.0.0
+[1.34.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.33.0...v1.34.0
+[1.33.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.32.1...v1.33.0
+[1.32.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.32.0...v1.32.1
+[1.32.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.31.1...v1.32.0
+[1.31.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.31.0...v1.31.1
+[1.31.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.30.0...v1.31.0
+[1.30.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.29.1...v1.30.0
+[1.29.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.29.0...v1.29.1
+[1.29.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.28.1...v1.29.0
+[1.28.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.28.0...v1.28.1
+[1.28.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.27.0...v1.28.0
+[1.27.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.26.0...v1.27.0
+[1.26.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.25.1...v1.26.0
+[1.25.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.25.0...v1.25.1
+[1.25.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.24.0...v1.25.0
+[1.24.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.23.0...v1.24.0
+[1.23.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.22.2...v1.23.0
+[1.22.2]: https://github.com/azurenoops/terraform-github-actions/compare/v1.22.1...v1.22.2
+[1.22.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.22.0...v1.22.1
+[1.22.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.21.1...v1.22.0
+[1.21.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.21.0...v1.21.1
+[1.21.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.20.1...v1.21.0
+[1.20.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.20.0...v1.20.1
+[1.20.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.19.0...v1.20.0
+[1.19.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.18.0...v1.19.0
+[1.18.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.17.3...v1.18.0
+[1.17.3]: https://github.com/azurenoops/terraform-github-actions/compare/v1.17.2...v1.17.3
+[1.17.2]: https://github.com/azurenoops/terraform-github-actions/compare/v1.17.1...v1.17.2
+[1.17.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.17.0...v1.17.1
+[1.17.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.16.0...v1.17.0
+[1.16.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.15.0...v1.16.0
+[1.15.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.14.0...v1.15.0
+[1.14.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.13.0...v1.14.0
+[1.13.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.12.0...v1.13.0
+[1.12.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.11.0...v1.12.0
+[1.11.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.10.0...v1.11.0
+[1.10.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.9.3...v1.10.0
+[1.9.3]: https://github.com/azurenoops/terraform-github-actions/compare/v1.9.2...v1.9.3
+[1.9.2]: https://github.com/azurenoops/terraform-github-actions/compare/v1.9.1...v1.9.2
+[1.9.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.9.0...v1.9.1
+[1.9.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.8.0...v1.9.0
+[1.8.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.7.0...v1.8.0
+[1.7.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.6.0...v1.7.0
+[1.6.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.5.2...v1.6.0
+[1.5.2]: https://github.com/azurenoops/terraform-github-actions/compare/v1.5.1...v1.5.2
+[1.5.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.5.0...v1.5.1
+[1.5.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.4.2...v1.5.0
+[1.4.2]: https://github.com/azurenoops/terraform-github-actions/compare/v1.4.1...v1.4.2
+[1.4.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.4.0...v1.4.1
+[1.4.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.3.1...v1.4.0
+[1.3.1]: https://github.com/azurenoops/terraform-github-actions/compare/v1.3.0...v1.3.1
+[1.3.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.2.0...v1.3.0
+[1.2.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/azurenoops/terraform-github-actions/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/azurenoops/terraform-github-actions/releases/tag/v1.0.0

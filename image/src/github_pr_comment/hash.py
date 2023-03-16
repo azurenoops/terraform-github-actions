@@ -5,7 +5,7 @@ from github_pr_comment.cmp import remove_warnings, remove_unchanged_attributes
 
 
 def comment_hash(value: bytes, salt: str) -> str:
-    h = hashlib.sha256(f'dflook/terraform-github-actions/{salt}'.encode())
+    h = hashlib.sha256(f'azurenoops/terraform-github-actions/{salt}'.encode())
     h.update(value)
     return h.hexdigest()
 

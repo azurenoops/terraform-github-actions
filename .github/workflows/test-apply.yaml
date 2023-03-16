@@ -953,7 +953,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Plan
-        uses: dflook/terraform-plan@v1.22.2
+        uses: azurenoops/terraform-plan@v1.22.2
         with:
           label: test-apply warnings_text
           path: tests/workflows/test-apply/warnings
@@ -1038,7 +1038,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Plan
-        uses: dflook/terraform-plan@v1.31.0
+        uses: azurenoops/terraform-plan@v1.31.0
         with:
           path: tests/workflows/test-apply/partial_backend
           backend_config_file: tests/workflows/test-apply/partial_backend/backend_config

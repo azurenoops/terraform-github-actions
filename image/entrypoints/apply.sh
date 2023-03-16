@@ -129,7 +129,7 @@ else
     if [[ ! -v TERRAFORM_ACTIONS_GITHUB_TOKEN ]]; then
         echo "GITHUB_TOKEN environment variable must be set to get plan approval from a PR"
         echo "Either set the GITHUB_TOKEN environment variable or automatically approve by setting the auto_approve input to 'true'"
-        echo "See https://github.com/dflook/terraform-github-actions/ for details."
+        echo "See https://github.com/azurenoops/terraform-github-actions/ for details."
         exit 1
     fi
 

@@ -43,7 +43,7 @@ if [[ "$GITHUB_EVENT_NAME" == "pull_request" || "$GITHUB_EVENT_NAME" == "issue_c
         if [[ ! -v TERRAFORM_ACTIONS_GITHUB_TOKEN ]]; then
             echo "GITHUB_TOKEN environment variable must be set to add GitHub PR comments"
             echo "Either set the GITHUB_TOKEN environment variable, or disable by setting the add_github_comment input to 'false'"
-            echo "See https://github.com/dflook/terraform-github-actions/ for details."
+            echo "See https://github.com/azurenoops/terraform-github-actions/ for details."
             exit 1
         fi
 

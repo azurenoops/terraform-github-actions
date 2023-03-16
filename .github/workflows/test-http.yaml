@@ -12,9 +12,9 @@ jobs:
     name: git+http full path creds
     env:
       TERRAFORM_HTTP_CREDENTIALS: |
-        github.com/dflook/hello=dflook:notapassword
-        github.com/hello=dflook:stillnotapassword
-        github.com/dflook/terraform-github-actions-dev.git=dflook:${{ secrets.USER_GITHUB_TOKEN }}
+        github.com/azurenoops/hello=azurenoops:notapassword
+        github.com/hello=azurenoops:stillnotapassword
+        github.com/azurenoops/terraform-github-actions-dev.git=azurenoops:${{ secrets.USER_GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -38,9 +38,9 @@ jobs:
     name: git+http partial path creds
     env:
       TERRAFORM_HTTP_CREDENTIALS: |
-        github.com/dflook/hello=dflook:notapassword
-        github.com/hello=dflook:stillnotapassword
-        github.com/dflook=dflook:${{ secrets.USER_GITHUB_TOKEN }}
+        github.com/azurenoops/hello=azurenoops:notapassword
+        github.com/hello=azurenoops:stillnotapassword
+        github.com/azurenoops=azurenoops:${{ secrets.USER_GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -64,9 +64,9 @@ jobs:
     name: git+http no path
     env:
       TERRAFORM_HTTP_CREDENTIALS: |
-        github.com/dflook/hello=dflook:notapassword
-        github.com/hello=dflook:stillnotapassword
-        github.com=dflook:${{ secrets.USER_GITHUB_TOKEN }}
+        github.com/azurenoops/hello=azurenoops:notapassword
+        github.com/hello=azurenoops:stillnotapassword
+        github.com=azurenoops:${{ secrets.USER_GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -112,7 +112,7 @@ jobs:
     name: http module source
     env:
       TERRAFORM_HTTP_CREDENTIALS: |
-        5qcb7mjppk.execute-api.eu-west-2.amazonaws.com=dflook:hello
+        5qcb7mjppk.execute-api.eu-west-2.amazonaws.com=azurenoops:hello
     steps:
       - name: Checkout
         uses: actions/checkout@v3

@@ -1,6 +1,6 @@
 # terraform-fmt-check action
 
-This is one of a suite of terraform related actions - find them at [dflook/terraform-github-actions](https://github.com/dflook/terraform-github-actions).
+This is one of a suite of terraform related actions - find them at [azurenoops/terraform-github-actions](https://github.com/azurenoops/terraform-github-actions).
 
 This action uses the `terraform fmt` command to check that all terraform files in a terraform configuration directory are in the canonical format.
 This can be used to check that files are properly formatted before merging.
@@ -20,7 +20,7 @@ If any files are not correctly formatted a failing GitHub check will be added fo
 * `workspace`
 
   Terraform workspace to inspect when discovering the terraform version to use, if not otherwise specified. 
-  See [dflook/terraform-version](https://github.com/dflook/terraform-github-actions/tree/main/terraform-version#terraform-version-action) for details.
+  See [azurenoops/terraform-version](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-version#terraform-version-action) for details.
 
   - Type: string
   - Optional
@@ -28,7 +28,7 @@ If any files are not correctly formatted a failing GitHub check will be added fo
 * `backend_config`
 
   List of terraform backend config values, one per line. This is used for discovering the terraform version to use, if not otherwise specified. 
-  See [dflook/terraform-version](https://github.com/dflook/terraform-github-actions/tree/main/terraform-version#terraform-version-action) for details.
+  See [azurenoops/terraform-version](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-version#terraform-version-action) for details.
 
   ```yaml
   with:
@@ -41,7 +41,7 @@ If any files are not correctly formatted a failing GitHub check will be added fo
 * `backend_config_file`
 
   List of terraform backend config files to use, one per line. This is used for discovering the terraform version to use, if not otherwise specified. 
-  See [dflook/terraform-version](https://github.com/dflook/terraform-github-actions/tree/main/terraform-version#terraform-version-action) for details.
+  See [azurenoops/terraform-version](https://github.com/azurenoops/terraform-github-actions/tree/main/terraform-version#terraform-version-action) for details.
   Paths should be relative to the GitHub Actions workspace
 
   ```yaml
@@ -104,7 +104,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform fmt
-        uses: dflook/terraform-fmt-check@v1
+        uses: azurenoops/terraform-fmt-check@v1
         with:
           path: my-terraform-config
 ```
@@ -125,7 +125,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform fmt
-        uses: dflook/terraform-fmt-check@v1
+        uses: azurenoops/terraform-fmt-check@v1
         id: fmt-check
         with:
           path: my-terraform-config

@@ -52,8 +52,8 @@ jobs:
 
           for action in $(cd $GITHUB_WORKSPACE && find . -name action.yaml -printf "%h\n" | sed 's/^.\///'); do
 
-            if git clone https://dflook:$GITHUB_TOKEN@github.com/dflook/$action.git "$HOME/$action"; then
-              echo "Releasing dflook/$action@$RELEASE_TAG"
+            if git clone https://azurenoops:$GITHUB_TOKEN@github.com/azurenoops/$action.git "$HOME/$action"; then
+              echo "Releasing azurenoops/$action@$RELEASE_TAG"
 
               rsync -r $GITHUB_WORKSPACE/$action/ $HOME/$action
               rm -rf $HOME/$action/.github
@@ -74,10 +74,10 @@ jobs:
                | envsubst \
                | jq --slurp --raw-input --arg RELEASE_TAG "$RELEASE_TAG" '{"tag_name": $RELEASE_TAG, "name": $RELEASE_TAG, "body": . }' \
                | curl -X POST \
-                   --user dflook:$GITHUB_TOKEN \
+                   --user azurenoops:$GITHUB_TOKEN \
                    --header "Content-Type: application/json" \
                    --data-binary @- \
-                   "https://api.github.com/repos/dflook/$action/releases"
+                   "https://api.github.com/repos/azurenoops/$action/releases"
 
             else
               echo "Skipping $action"

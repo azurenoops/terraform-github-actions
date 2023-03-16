@@ -1,6 +1,6 @@
 # terraform-version action
 
-This is one of a suite of terraform related actions - find them at [dflook/terraform-github-actions](https://github.com/dflook/terraform-github-actions).
+This is one of a suite of terraform related actions - find them at [azurenoops/terraform-github-actions](https://github.com/azurenoops/terraform-github-actions).
 
 This action determines the terraform and provider versions to use for a Terraform root module.
 
@@ -149,9 +149,9 @@ outputs yourself.
   ```yaml
   env:
     TERRAFORM_HTTP_CREDENTIALS: |
-      example.com=dflook:${{ secrets.HTTPS_PASSWORD }}
-      github.com/dflook/terraform-github-actions.git=dflook-actions:${{ secrets.ACTIONS_PAT }}
-      github.com/dflook=dflook:${{ secrets.DFLOOK_PAT }}
+      example.com=azurenoops:${{ secrets.HTTPS_PASSWORD }}
+      github.com/azurenoops/terraform-github-actions.git=azurenoops-actions:${{ secrets.ACTIONS_PAT }}
+      github.com/azurenoops=azurenoops:${{ secrets.azurenoops_PAT }}
       github.com=graham:${{ secrets.GITHUB_PAT }}  
   ```
 
@@ -192,7 +192,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Test terraform-version
-        uses: dflook/terraform-version@v1
+        uses: azurenoops/terraform-version@v1
         id: terraform-version
         with:
           path: my-configuration

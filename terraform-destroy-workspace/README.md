@@ -1,6 +1,6 @@
 # terraform-destroy-workspace action
 
-This is one of a suite of terraform related actions - find them at [dflook/terraform-github-actions](https://github.com/dflook/terraform-github-actions).
+This is one of a suite of terraform related actions - find them at [azurenoops/terraform-github-actions](https://github.com/azurenoops/terraform-github-actions).
 
 This action uses the `terraform destroy` command to destroy all resources in a terraform workspace and then delete the workspace.
 
@@ -203,9 +203,9 @@ This action uses the `terraform destroy` command to destroy all resources in a t
   ```yaml
   env:
     TERRAFORM_HTTP_CREDENTIALS: |
-      example.com=dflook:${{ secrets.HTTPS_PASSWORD }}
-      github.com/dflook/terraform-github-actions.git=dflook-actions:${{ secrets.ACTIONS_PAT }}
-      github.com/dflook=dflook:${{ secrets.DFLOOK_PAT }}
+      example.com=azurenoops:${{ secrets.HTTPS_PASSWORD }}
+      github.com/azurenoops/terraform-github-actions.git=azurenoops-actions:${{ secrets.ACTIONS_PAT }}
+      github.com/azurenoops=azurenoops:${{ secrets.azurenoops_PAT }}
       github.com=graham:${{ secrets.GITHUB_PAT }}  
   ```
 
@@ -232,7 +232,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform destroy
-        uses: dflook/terraform-destroy-workspace@v1
+        uses: azurenoops/terraform-destroy-workspace@v1
         with:
           path: terraform
           workspace: ${{ github.head_ref }}
@@ -256,7 +256,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform destroy
-        uses: dflook/terraform-destroy-workspace@v1
+        uses: azurenoops/terraform-destroy-workspace@v1
         id: first_try
         continue-on-error: true
         with:
@@ -264,7 +264,7 @@ jobs:
           workspace: ${{ github.head_ref }}
 
       - name: Retry failed destroy
-        uses: dflook/terraform-destroy-workspace@v1
+        uses: azurenoops/terraform-destroy-workspace@v1
         if: ${{ steps.first_try.outputs.failure-reason == 'destroy-failed' }}
         with:
           path: my-terraform-config

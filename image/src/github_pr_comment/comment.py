@@ -130,13 +130,13 @@ def deserialize(s) -> TerraformComment:
     )
 
 def _format_comment_header(**kwargs) -> str:
-    return f'<!-- dflook/terraform-github-actions {json.dumps(kwargs, separators=(",",":"))} -->'
+    return f'<!-- azurenoops/terraform-github-actions {json.dumps(kwargs, separators=(",",":"))} -->'
 
 def _parse_comment_header(comment_header: Optional[str]) -> dict[str, str]:
     if comment_header is None:
         return {}
 
-    if header := re.match(r'^<!--\sdflook/terraform-github-actions\s(?P<args>.*)\s-->', comment_header):
+    if header := re.match(r'^<!--\sazurenoops/terraform-github-actions\s(?P<args>.*)\s-->', comment_header):
         try:
             return json.loads(header['args'])
         except JSONDecodeError:

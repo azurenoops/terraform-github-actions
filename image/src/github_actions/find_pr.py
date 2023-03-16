@@ -17,7 +17,7 @@ def find_pr(github: GithubApi, actions_env: GithubEnv) -> PrUrl:
     Find the pull request this event is related to
 
     >>> find_pr()
-    'https://api.github.com/repos/dflook/terraform-github-actions/pulls/8'
+    'https://api.github.com/repos/azurenoops/terraform-github-actions/pulls/8'
 
     """
 

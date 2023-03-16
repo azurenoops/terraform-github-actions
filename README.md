@@ -1,4 +1,4 @@
-# Terraform GitHub Actions ![release](https://img.shields.io/github/v/release/dflook/terraform-github-actions)![job runs](https://img.shields.io/docker/pulls/danielflook/terraform-github-actions?label=job%20runs)
+# Terraform GitHub Actions ![release](https://img.shields.io/github/v/release/azurenoops/terraform-github-actions)![job runs](https://img.shields.io/docker/pulls/danielflook/terraform-github-actions?label=job%20runs)
 
 This is a suite of terraform related GitHub Actions that can be used together to build effective Infrastructure as Code workflows.
 
@@ -8,19 +8,19 @@ These actions can be used to easily perform [Terraform](https://www.terraform.io
 ## Actions
 See the documentation for the available actions:
 
-- [dflook/terraform-plan](terraform-plan)
-- [dflook/terraform-apply](terraform-apply)
-- [dflook/terraform-output](terraform-output)
-- [dflook/terraform-remote-state](terraform-remote-state)
-- [dflook/terraform-validate](terraform-validate)
-- [dflook/terraform-fmt-check](terraform-fmt-check)
-- [dflook/terraform-fmt](terraform-fmt)
-- [dflook/terraform-check](terraform-check)
-- [dflook/terraform-new-workspace](terraform-new-workspace)
-- [dflook/terraform-destroy-workspace](terraform-destroy-workspace)
-- [dflook/terraform-destroy](terraform-destroy)
-- [dflook/terraform-version](terraform-version)
-- [dflook/terraform-unlock-state](terraform-unlock-state)
+- [azurenoops/terraform-plan](terraform-plan)
+- [azurenoops/terraform-apply](terraform-apply)
+- [azurenoops/terraform-output](terraform-output)
+- [azurenoops/terraform-remote-state](terraform-remote-state)
+- [azurenoops/terraform-validate](terraform-validate)
+- [azurenoops/terraform-fmt-check](terraform-fmt-check)
+- [azurenoops/terraform-fmt](terraform-fmt)
+- [azurenoops/terraform-check](terraform-check)
+- [azurenoops/terraform-new-workspace](terraform-new-workspace)
+- [azurenoops/terraform-destroy-workspace](terraform-destroy-workspace)
+- [azurenoops/terraform-destroy](terraform-destroy)
+- [azurenoops/terraform-version](terraform-version)
+- [azurenoops/terraform-unlock-state](terraform-unlock-state)
 
 ## Example Usage
 These terraform actions can be added as steps to your own workflow files.
@@ -40,7 +40,7 @@ We can use PRs to safely plan and apply infrastructure changes.
     <img src="terraform-apply/planapply.gif" width="1000">
 </p>
 
-You can make GitHub enforce this using branch protection, see the [dflook/terraform-apply](terraform-apply) action for details.
+You can make GitHub enforce this using branch protection, see the [azurenoops/terraform-apply](terraform-apply) action for details.
 
 In this example we use two workflows:
 
@@ -66,7 +66,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform plan
-        uses: dflook/terraform-plan@v1
+        uses: azurenoops/terraform-plan@v1
         with:
           path: my-terraform-config
 ```
@@ -96,7 +96,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform apply
-        uses: dflook/terraform-apply@v1
+        uses: azurenoops/terraform-apply@v1
         with:
           path: my-terraform-config
 ```
@@ -129,7 +129,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform validate
-        uses: dflook/terraform-validate@v1
+        uses: azurenoops/terraform-validate@v1
         with:
           path: my-terraform-config
 
@@ -141,7 +141,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform fmt
-        uses: dflook/terraform-fmt-check@v1
+        uses: azurenoops/terraform-fmt-check@v1
         with:
           path: my-terraform-config
 ```
@@ -170,7 +170,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check for drift
-        uses: dflook/terraform-check@v1
+        uses: azurenoops/terraform-check@v1
         with:
           path: my-terraform-config
 ```
@@ -198,7 +198,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Rotate certs
-        uses: dflook/terraform-apply@v1
+        uses: azurenoops/terraform-apply@v1
         with:
           path: my-terraform-config
           auto_approve: true
@@ -228,7 +228,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform fmt
-        uses: dflook/terraform-fmt@v1
+        uses: azurenoops/terraform-fmt@v1
         with:
           path: my-terraform-config
           
@@ -266,13 +266,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Use branch workspace
-        uses: dflook/terraform-new-workspace@v1
+        uses: azurenoops/terraform-new-workspace@v1
         with:
           path: my-terraform-config
           workspace: ${{ github.head_ref }}
           
       - name: Deploy test infrastrucutre
-        uses: dflook/terraform-apply@v1
+        uses: azurenoops/terraform-apply@v1
         id: test-infra
         with:
           path: my-terraform-config
@@ -302,7 +302,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: terraform destroy
-        uses: dflook/terraform-destroy-workspace@v1
+        uses: azurenoops/terraform-destroy-workspace@v1
         with:
           path: my-terraform-config
           workspace: ${{ github.head_ref }}

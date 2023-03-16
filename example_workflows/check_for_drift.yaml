@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check
-        uses: dflook/terraform-check@v1
+        uses: azurenoops/terraform-check@v1
         with:
           path: terraform

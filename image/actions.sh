@@ -328,14 +328,14 @@ function set-remote-plan-args() {
 
     if [[ -n "$INPUT_VAR_FILE" ]]; then
         for file in $(echo "$INPUT_VAR_FILE" | tr ',' '\n'); do
-            cp "$file" "$INPUT_PATH/zzzz-dflook-terraform-github-actions-$AUTO_TFVARS_COUNTER.auto.tfvars"
+            cp "$file" "$INPUT_PATH/zzzz-azurenoops-terraform-github-actions-$AUTO_TFVARS_COUNTER.auto.tfvars"
             AUTO_TFVARS_COUNTER=$((AUTO_TFVARS_COUNTER + 1))
         done
     fi
 
     if [[ -n "$INPUT_VARIABLES" ]]; then
         echo "$INPUT_VARIABLES" >"$STEP_TMP_DIR/variables.tfvars"
-        cp "$STEP_TMP_DIR/variables.tfvars" "$INPUT_PATH/zzzz-dflook-terraform-github-actions-$AUTO_TFVARS_COUNTER.auto.tfvars"
+        cp "$STEP_TMP_DIR/variables.tfvars" "$INPUT_PATH/zzzz-azurenoops-terraform-github-actions-$AUTO_TFVARS_COUNTER.auto.tfvars"
     fi
 
     debug_cmd ls -la "$INPUT_PATH"
@@ -427,22 +427,22 @@ function force_unlock() {
 
 # Every file written to disk should use one of these directories
 STEP_TMP_DIR="/tmp"
-JOB_TMP_DIR="$HOME/.dflook-terraform-github-actions"
-WORKSPACE_TMP_DIR=".dflook-terraform-github-actions/$(random_string)"
+JOB_TMP_DIR="$HOME/.azurenoops-terraform-github-actions"
+WORKSPACE_TMP_DIR=".azurenoops-terraform-github-actions/$(random_string)"
 readonly STEP_TMP_DIR JOB_TMP_DIR WORKSPACE_TMP_DIR
 export STEP_TMP_DIR JOB_TMP_DIR WORKSPACE_TMP_DIR
 
 function fix_owners() {
     debug_cmd ls -la "$GITHUB_WORKSPACE"
-    if [[ -d "$GITHUB_WORKSPACE/.dflook-terraform-github-actions" ]]; then
-        chown -R --reference "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.dflook-terraform-github-actions" || true
-        debug_cmd ls -la "$GITHUB_WORKSPACE/.dflook-terraform-github-actions"
+    if [[ -d "$GITHUB_WORKSPACE/.azurenoops-terraform-github-actions" ]]; then
+        chown -R --reference "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.azurenoops-terraform-github-actions" || true
+        debug_cmd ls -la "$GITHUB_WORKSPACE/.azurenoops-terraform-github-actions"
     fi
 
     debug_cmd ls -la "$HOME"
-    if [[ -d "$HOME/.dflook-terraform-github-actions" ]]; then
-        chown -R --reference "$HOME" "$HOME/.dflook-terraform-github-actions" || true
-        debug_cmd ls -la "$HOME/.dflook-terraform-github-actions"
+    if [[ -d "$HOME/.azurenoops-terraform-github-actions" ]]; then
+        chown -R --reference "$HOME" "$HOME/.azurenoops-terraform-github-actions" || true
+        debug_cmd ls -la "$HOME/.azurenoops-terraform-github-actions"
     fi
     if [[ -d "$HOME/.terraform.d" ]]; then
         chown -R --reference "$HOME" "$HOME/.terraform.d" || true
@@ -450,7 +450,7 @@ function fix_owners() {
     fi
 
     if [[ -d "$INPUT_PATH" ]]; then
-        debug_cmd find "$INPUT_PATH" -regex '.*/zzzz-dflook-terraform-github-actions-[0-9]+\.auto\.tfvars' -print -delete || true
+        debug_cmd find "$INPUT_PATH" -regex '.*/zzzz-azurenoops-terraform-github-actions-[0-9]+\.auto\.tfvars' -print -delete || true
     fi
 }
 

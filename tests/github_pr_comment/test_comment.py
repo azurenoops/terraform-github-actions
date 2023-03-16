@@ -10,13 +10,13 @@ def test_comment_header():
         'backend_config': 'backend_config1'
     }
 
-    expected_header = '<!-- dflook/terraform-github-actions {"workspace_name":"default","backend_config":"backend_config1"} -->'
+    expected_header = '<!-- azurenoops/terraform-github-actions {"workspace_name":"default","backend_config":"backend_config1"} -->'
     actual_header = _format_comment_header(**header_args)
     assert actual_header == expected_header
 
     assert _parse_comment_header(expected_header) == header_args
 
-    wonky_header = '<!-- dflook/terraform-github-actions   {   "backend_config"  :"backend_config1" ,  "workspace_name": "default"} -->'
+    wonky_header = '<!-- azurenoops/terraform-github-actions   {   "backend_config"  :"backend_config1" ,  "workspace_name": "default"} -->'
     assert _parse_comment_header(wonky_header) == header_args
 
 

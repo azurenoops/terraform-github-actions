@@ -27,7 +27,7 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': '<html><head><meta name="terraform-get" content="git::https://github.com/dflook/terraform-github-actions.git//tests/workflows/test-http/test-module" />',
+        'body': '<html><head><meta name="terraform-get" content="git::https://github.com/azurenoops/terraform-github-actions.git//tests/workflows/test-http/test-module" />',
         'headers': {
             'content-type': 'text/html'
         }
