@@ -1,4 +1,4 @@
-FROM azurenoops/actions-base:latest
+FROM azurenoops/tf-actions-base:latest
 
 ARG TARGETARCH
 
